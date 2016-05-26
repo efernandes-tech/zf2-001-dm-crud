@@ -16,6 +16,19 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+    	$request = $this->getRequest();
+    	
+    	$result = array();
+    	
+    	if ($request->isPost())
+    	{
+    		$nome = $request->getPost('nome');
+    		$cpf = $request->getPost('cpf');
+    		$salario = $request->getPost('salario');
+    		
+    		$result['msg'] = $nome . ", enviado corretamente!";
+    	}
+    	
+        return new ViewModel($result);
     }
 }
