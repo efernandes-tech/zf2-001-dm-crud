@@ -7,3 +7,16 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Instale as dependencias do projeto
 	php composer.phar self-update
 	php composer.phar install
+- Instale o Doctrine com o Composer
+	composer require doctrine/doctrine-orm-module
+- Crie pastas dentro da pasta "data"
+	DoctrineORMModule/Proxy
+- Adicione no arquivo "config/application.config.php" os modulos que serao carregados
+	...
+	'modules' => array(
+        'Application',
+    	'DoctrineModule',
+    	'DoctrineORMModule'
+    ),
+    ...
+-
