@@ -36,7 +36,7 @@ class IndexController extends AbstractActionController
 	    		$funcionario->setSalario($salario);
 	    		
 	    		// Chama o Doctrine.
-	    		$em = $this->getServiceLocator()->get('Doctrine\ORM\EmtityManager');
+	    		$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 	    		// Doctrine inseri no DB.
 	    		$em->persist($funcionario);
 	    		// Realiza o commit.
