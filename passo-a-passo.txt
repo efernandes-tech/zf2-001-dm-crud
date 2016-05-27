@@ -21,3 +21,6 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
     ...
 - Crie o formulario basico de adicao de funcionario
 	module/Application/view/application/index/index.phtml
+- Crie o recebimento dos dados
+	module/Application/srs/Application/Controller/IndexController.php
+- Crie a classe "Funcionario.php" na pasta "module/Application/srs/Application/Model"
