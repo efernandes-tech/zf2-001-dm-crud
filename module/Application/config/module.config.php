@@ -101,4 +101,7 @@ return array(
             ),
         ),
     ),
+	'doctrine' => array(
+		
+	),
 );

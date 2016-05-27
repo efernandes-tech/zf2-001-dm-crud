@@ -24,3 +24,5 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Crie o recebimento dos dados
 	module/Application/srs/Application/Controller/IndexController.php
 - Crie a classe "Funcionario.php" na pasta "module/Application/srs/Application/Model"
+- Configurar a conexao do Doctrine no arquivo "config/autoload/doctrine_orm.local.php"
+- Configurar o Doctrine no modulo em "module/Application/config/module.config.php"
