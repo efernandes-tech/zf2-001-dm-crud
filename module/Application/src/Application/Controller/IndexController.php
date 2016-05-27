@@ -22,11 +22,30 @@ class IndexController extends AbstractActionController
     	
     	if ($request->isPost())
     	{
-    		$nome = $request->getPost('nome');
-    		$cpf = $request->getPost('cpf');
-    		$salario = $request->getPost('salario');
-    		
-    		$result['msg'] = $nome . ", enviado corretamente!";
+    		try {
+	    		$nome = $request->getPost('nome');
+	    		$cpf = $request->getPost('cpf');
+	    		$salario = $request->getPost('salario');
+	    		
+	    		// CRUD - Create.
+	    		
+	    		// Instancia o objeto e alimenta os atributos.
+	    		$funcionario = new \Application\Model\Funcionario();
+	    		$funcionario->setNome($nome);
+	    		$funcionario->setCpf($cpf);
+	    		$funcionario->setSalario($salario);
+	    		
+	    		// Chama o Doctrine.
+	    		$em = $this->getServiceLocator()->get('Doctrine\ORM\EmtityManager');
+	    		// Doctrine inseri no DB.
+	    		$em->persist($funcionario);
+	    		// Realiza o commit.
+	    		$em->flush();
+	    		
+	    		$result['msg'] = $nome . ", enviado corretamente!";
+    		} catch (Exception $e) {
+    			
+    		}
     	}
     	
         return new ViewModel($result);
