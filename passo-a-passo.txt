@@ -30,4 +30,6 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Criar um link para a pagina que lista os funcionarios
 - Criar a funcao "listarAction()" em "IndexController.php"
 - Criar a view "listar.phtml" que exibe a lista de funcionarios
-- Criar a rota para edicao e exclusao em "module/Application/config.module.php" 
+- Criar a rota para edicao e exclusao em "module/Application/config.module.php"
+- Cria na view os links para editar e excluir
+ 

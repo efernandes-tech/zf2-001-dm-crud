@@ -15,8 +15,16 @@
 			<td><?php echo $f->getNome(); ?></td>
 			<td><?php echo $f->getCpf(); ?></td>
 			<td><?php echo $f->getSalario(); ?></td>
-			<td>Editar</td>
-			<td>Excluir</td>
+			<td>
+				<a href="<?php echo $this->url('rota2', array('action' => 'editar', 'id' => $f->getId())); ?>">
+					Editar
+				</a>
+			</td>
+			<td>
+				<a href="<?php echo $this->url('rota2', array('action' => 'excluir', 'id' => $f->getId())); ?>">
+					Excluir
+				</a>
+			</td>
 		</tr>
 	<?php endforeach; ?>
 </table>
