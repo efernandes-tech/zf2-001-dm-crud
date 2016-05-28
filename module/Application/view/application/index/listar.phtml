@@ -1,0 +1,26 @@
+<h3>Listar Funcionários</h3>
+
+<br><br>
+
+<table border="1">
+	<tr>
+		<th>NOME</th>
+		<th>CPF</th>
+		<th>SÁLARIO</th>
+		<th>EDITAR</th>
+		<th>EXCLUIR</th>
+	</tr>
+	<?php foreach ($this->lista as $f): ?>
+		<tr>
+			<td><?php echo $f->getNome(); ?></td>
+			<td><?php echo $f->getCpf(); ?></td>
+			<td><?php echo $f->getSalario(); ?></td>
+			<td>Editar</td>
+			<td>Excluir</td>
+		</tr>
+	<?php endforeach; ?>
+</table>
+
+<br><br>
+
+<a href="<?php echo $this->url('home'); ?>">Voltar</a>
