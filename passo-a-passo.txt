@@ -33,3 +33,6 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Criar a rota para edicao e exclusao em "module/Application/config.module.php"
 - Criar na view os links para editar e excluir
 - Criar as funcoes para editar e excluir
+- Criar o arquivo para edicao
+	module/Application/view/application/index/editar.phtml
+- Desenvolvi a funcionalidade de edicao.

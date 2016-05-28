@@ -99,7 +99,35 @@ class IndexController extends AbstractActionController
     	 
     	// Busca e instancia objeto.
     	$funcionario = $em->find('Application\Model\Funcionario', $id);
+    	
+    	$request = $this->getRequest();
+    	
+    	if ($request->isPost())
+    	{
+    		try {
+    			$nome = $request->getPost('nome');
+    			$cpf = $request->getPost('cpf');
+    			$salario = $request->getPost('salario');
+    			
+    			$funcionario->setNome($nome);
+    			$funcionario->setCpf($cpf);
+    			$funcionario->setSalario($salario);
+    			
+    			// Chama o Doctrine.
+    			$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    			
+    			// Doctrine atualiza o funcionario no DB.
+    			$em->persist($funcionario);
+    			 
+    			// Realiza o commit.
+    			$em->flush();
+    		} catch (Exception $e) {
+    			
+    		}
+    		
+    		return $this->redirect()->toRoute('application/default', array('controller' => 'index', 'action' => 'listar'));
+    	}
     	     	 
-    	return ViewModel(array('f' => $funcionario));
+    	return new ViewModel(array('f' => $funcionario));
     }
 }
