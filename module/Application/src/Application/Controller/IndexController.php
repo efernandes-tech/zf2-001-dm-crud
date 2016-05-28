@@ -50,4 +50,14 @@ class IndexController extends AbstractActionController
     	
         return new ViewModel($result);
     }
+    
+    public function listarAction()
+    {
+    	// Chama o Doctrine.
+    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    	// SELECT em todos os funcionarios.
+    	$lista = $em->getRepository("Application\Model\Funcionario")->findAll();
+
+    	return new ViewModel(array('lista' => $lista));
+    }
 }
