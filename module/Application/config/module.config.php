@@ -52,6 +52,16 @@ return array(
                     ),
                 ),
             ),
+        	'rota2' => array(
+        		'type' => 'Segment',
+        		'options' => array(
+        			'route' => '/application/flag/[:action]/[:id][/]',
+        			'defaults' => array(
+        				'__NAMESPACE__' => 'Application\Controller',
+        				'controller' => 'Index',
+        			)
+        		)
+        	),
         ),
     ),
     'service_manager' => array(

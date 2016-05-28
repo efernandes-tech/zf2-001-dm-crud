@@ -28,3 +28,6 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Configurar o Doctrine no modulo em "module/Application/config/module.config.php"
 - Criar o cadastro de funcionario em "module/Application/src/Application/Controller/IndexControlle.php" 
 - Criar um link para a pagina que lista os funcionarios
+- Criar a funcao "listarAction()" em "IndexController.php"
+- Criar a view "listar.phtml" que exibe a lista de funcionarios
+- Criar a rota para edicao e exclusao em "module/Application/config.module.php" 
