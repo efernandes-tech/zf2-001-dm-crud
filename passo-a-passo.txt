@@ -1,17 +1,17 @@
 Zend Framework - DevMedia Artigo - Zend Framework 2
-- Baixe o Skeleton Application clonando do GitHub
+- Baixar o Skeleton Application clonando do GitHub
 	http://framework.zend.com/downloads/skeleton-app
 		git clone git://github.com/zendframework/ZendSkeletonApplication.git
-- Baixe o "composer.phar" para dentro do projeto
+- Baixar o "composer.phar" para dentro do projeto
 	https://getcomposer.org/composer.phar
-- Instale as dependencias do projeto
+- Instalar as dependencias do projeto
 	php composer.phar self-update
 	php composer.phar install
-- Instale o Doctrine com o Composer
+- Instalar o Doctrine com o Composer
 	composer require doctrine/doctrine-orm-module
-- Crie pastas dentro da pasta "data"
+- Criar pastas dentro da pasta "data"
 	DoctrineORMModule/Proxy
-- Adicione no arquivo "config/application.config.php" os modulos que serao carregados
+- Adicionar no arquivo "config/application.config.php" os modulos que serao carregados
 	...
 	'modules' => array(
         'Application',
@@ -19,11 +19,11 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
     	'DoctrineORMModule'
     ),
     ...
-- Crie o formulario basico de adicao de funcionario
+- Criar o formulario basico de adicao de funcionario
 	module/Application/view/application/index/index.phtml
-- Crie o recebimento dos dados
+- Criar o recebimento dos dados
 	module/Application/srs/Application/Controller/IndexController.php
-- Crie a classe "Funcionario.php" na pasta "module/Application/srs/Application/Model"
+- Criar a classe "Funcionario.php" na pasta "module/Application/srs/Application/Model"
 - Configurar a conexao do Doctrine no arquivo "config/autoload/doctrine_orm.local.php"
 - Configurar o Doctrine no modulo em "module/Application/config/module.config.php"
 - Criar o cadastro de funcionario em "module/Application/src/Application/Controller/IndexControlle.php" 
@@ -31,5 +31,5 @@ Zend Framework - DevMedia Artigo - Zend Framework 2
 - Criar a funcao "listarAction()" em "IndexController.php"
 - Criar a view "listar.phtml" que exibe a lista de funcionarios
 - Criar a rota para edicao e exclusao em "module/Application/config.module.php"
-- Cria na view os links para editar e excluir
- 
+- Criar na view os links para editar e excluir
+- Criar as funcoes para editar e excluir

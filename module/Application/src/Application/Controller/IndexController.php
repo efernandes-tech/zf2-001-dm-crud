@@ -37,8 +37,10 @@ class IndexController extends AbstractActionController
 	    		
 	    		// Chama o Doctrine.
 	    		$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+
 	    		// Doctrine inseri no DB.
 	    		$em->persist($funcionario);
+	    		
 	    		// Realiza o commit.
 	    		$em->flush();
 	    		
@@ -53,11 +55,51 @@ class IndexController extends AbstractActionController
     
     public function listarAction()
     {
+    	// CRUD - Read.
+    	
     	// Chama o Doctrine.
     	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
     	// SELECT em todos os funcionarios.
     	$lista = $em->getRepository("Application\Model\Funcionario")->findAll();
 
     	return new ViewModel(array('lista' => $lista));
+    }
+    
+    public function excluirAction()
+    {
+    	// CRUD - Delete.
+    	
+    	// Pega o ID ou retorna 0 por padrao.
+    	$id = $this->params()->fromRoute('id', 0);
+    	
+    	// Chama o Doctrine.
+    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    	
+    	// Busca e instancia objeto.
+    	$funcionario = $em->find('Application\Model\Funcionario', $id);
+    	
+    	// Remove o funcionario.
+    	$em->remove($funcionario);
+    	
+    	// Realiza o commit.
+    	$em->flush();
+    	
+    	return $this->redirect()->toRoute('application/default', array('controller' => 'index', 'action' => 'listar'));
+    }
+    
+    public function editarAction()
+    {
+    	// CRUD - Update.
+    	 
+    	// Pega o ID ou retorna 0 por padrao.
+    	$id = $this->params()->fromRoute('id', 0);
+    	 
+    	// Chama o Doctrine.
+    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    	 
+    	// Busca e instancia objeto.
+    	$funcionario = $em->find('Application\Model\Funcionario', $id);
+    	     	 
+    	return ViewModel(array('f' => $funcionario));
     }
 }
